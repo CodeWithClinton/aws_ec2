@@ -1,39 +1,7 @@
 asgiref==3.8.1
-Django==4.2.3
+Django==5.0.7
 pillow==10.4.0
+psycopg2-binary==2.9.9
+python-dotenv==1.0.1
 sqlparse==0.5.0
 tzdata==2024.1
-urllib3
-
-
-# [Unit]
-# Description=gunicorn daemon
-# After=network.target
-
-# [Service]
-# User=ubuntu
-# Group=www-data
-# WorkingDirectory=/home/ubuntu/aws_ec2
-# ExecStart=/home/ubuntu/aws_ec2/venv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/ubuntu/aws_ec2.sock myvoting.wsgi:application
-
-# [Install]
-# WantedBy=multi-user.target
-
-
-# server {
-#     listen 80;
-#     server_name 16.171.182.173;
-
-#     location = /favicon.ico { access_log off; log_not_found off; }
-#     location /static/ {
-#         root /home/ubuntu/aws_ec2;
-#     }
-
-#     location / {
-#         include proxy_params;
-#         proxy_pass http://unix:/home/ubuntu/aws_ec2.sock;
-#     }
-# }
-
-
-# sudo ln -s /etc/nginx/sites-available/myvoting /etc/nginx/sites-enabled
